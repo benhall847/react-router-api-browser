@@ -1,24 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  Link,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom'
+import Home from './Home'
+import FortuneApi from './FortuneApi'
+import WeatherApi from './WeatherApi'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+      <div className="dropdown">
+        <button 
+        className="btn btn-secondary dropdown-toggle"  
+        type="button" 
+        id="dropdownMenuButton" 
+        data-toggle="dropdown" 
+        aria-haspopup="true" 
+        aria-expanded="false">
+        DropDownButton
+        </button>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <Link to="/">HOME</Link>
+          <Link to="/fortune">FORTUNE</Link>
+          <Link to="/weather">WEATHER</Link>
+
+        </div>
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/fortune" component={FortuneApi}></Route>
+        <Route path="/weather" component={WeatherApi}></Route>
+      
+      </div>
     </div>
   );
 }
