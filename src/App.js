@@ -24,9 +24,22 @@ function App() {
         DropDownButton
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <Link to="/">HOME</Link>
-          <Link to="/fortune">FORTUNE</Link>
-          <Link to="/weather">WEATHER</Link>
+
+          <Link 
+          to="/" 
+          className="dropdown-item"
+          >HOME
+          </Link>
+          <Link 
+          to="/fortune" 
+          className="dropdown-item"
+          >FORTUNE
+          </Link>
+          <Link 
+          to="/weather" 
+          className="dropdown-item"
+          >WEATHER
+          </Link>
 
         </div>
         <Route exact path="/" component={Home}></Route>
